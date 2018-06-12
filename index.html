@@ -15,7 +15,6 @@
         <script>
             $('#iframeHiddenTab').focus(function() {
                 postMessageToIframe({ messageType: 'focus', iframe: 'number.html', elem: 'cardNumber' });
-                this.blur();
             });
             function moveOn() {
                 postMessageToIframe({ messageType: 'focus', iframe: 'number.html', elem: 'cardNumber' })
