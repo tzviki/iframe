@@ -6,6 +6,39 @@
         <script src=""></script>
     </head>
     <body>
-        <input type="text" placeholder="cardnumber">
+        <input type="text" placeholder="cardnumber" id="cardNumber">
+        <input type="text" placeholder="funplace" id="hidesoon">
+
+
+        <script>
+            window.addEventListener('message', procMessage, false);
+
+            function procMessage(event) {
+                var message = JSON.parse(event.data);
+
+                if (message.messageType === 'focus') {
+                    var iframe = message.iframe;
+                    var frame = getFrame(iframe);
+                    if (frame) {
+                        frame.document.getElementById(message.elem).focus();
+                    }
+                }
+
+            }
+            
+            function getFrame(frameName) {
+                for (var i = 0; i < parent.frames.length; i++) {
+                    try {
+                        var path = parent.frames[i].location.pathname.replace('/iframe/','');
+                        if (path === frameName) {
+                            return parent.frames[i];
+                        }
+                    } catch (error) {
+                        continue;
+                    }
+                }
+            }
+
+        </script>
     </body>
 </html>
