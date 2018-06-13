@@ -34,7 +34,18 @@
 
             function postMessageToIframe(message) {
                 document.getElementById('rootFrame').contentWindow.postMessage(JSON.stringify(message), document.location.href);
-            } 
+            }
+
+            window.addEventListener('message', procParentMessage, false);
+
+            function procParentMessage(event) {
+                var message = event.data;
+
+                if (message.messageType === 'focusBack') {
+                    $('#iframeHiddenTab').prev('input').focus();                   
+                }
+            }
+
       
         </script>
     </body>

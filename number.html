@@ -12,6 +12,10 @@
 
 
         <script>
+            $('#iframeHiddenTabPre').focus(function(){
+                var msg = { messageType: 'focusBack', elem: 'cardNumber' }
+                window.parent.postMessage(msg, document.referrer);
+            });
             
 
         </script>
