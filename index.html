@@ -57,9 +57,9 @@
                     $('#iframeHiddenTab').prev('input').focus();                   
                 }
                 if (message.messageType === 'focusNext'){
-                    var nextElem = $('#iframeHiddenTab').prev('input');
+                    var nextElem = $('#iframeHiddenTab').next('input');
                     if (!nextElem) {
-                        nextElem = $('#iframeHiddenTab').prev('button');
+                        nextElem = $('#iframeHiddenTab').next('button');
                     }
                     if (nextElem) {
                         nextElem.focus();
