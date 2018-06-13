@@ -14,11 +14,11 @@
 
         <script>
             $('#iframeHiddenTabPre').focus(function(){
-                var msg = { messageType: 'focus', iframe: 'cvv.html', elem: 'cvv' }
+                var msg = { messageType: 'focus', iframe: 'month.html', elem: 'cardMonth' }
                 window.parent.postMessage(msg, document.referrer);
             });
             $('#iframeHiddenTabPost').focus(function(){
-                var msg = { messageType: 'focus', iframe: 'month.html', elem: 'cardMonth' }
+                var msg = { messageType: 'focus', iframe: 'cvv.html', elem: 'cvv' }
                 window.parent.postMessage(msg, document.referrer);
             });
             
