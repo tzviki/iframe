@@ -13,7 +13,14 @@
 
 
         <script>
-            
+            $('#iframeHiddenTabPre').focus(function(){
+                var msg = { messageType: 'focus', iframe: 'cardYear.html', elem: 'cardYear' }
+                window.parent.postMessage(msg, document.referrer);
+            });
+            $('#iframeHiddenTabPost').focus(function(){
+                var msg = { messageType: 'focusNext' }
+                window.parent.postMessage(msg, document.referrer);
+            });
 
         </script>
     </body>
