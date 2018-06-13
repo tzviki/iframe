@@ -17,6 +17,10 @@
                 var msg = { messageType: 'focusBack', elem: 'cardNumber' }
                 window.parent.postMessage(msg, document.referrer);
             });
+            $('#iframeHiddenTabPost').focus(function(){
+                var msg = { messageType: 'focus', iframe: 'month.html', elem: 'cardMonth' }
+                window.parent.postMessage(msg, document.referrer);
+            });
             
 
         </script>
